@@ -9,25 +9,6 @@ namespace AREFLIB
     public static class Connectivity
     {
 
-        //Read Connection From AREFCONN
-        public static void GET_CONN(string Password)
-        {
-            AREFLIB.Variables.Server_username = Conn_Keys.Server_username_Request(Password);
-            AREFLIB.Variables.Server_password = Encryption.DecryptString(Conn_Keys.Server_password_Request(Password));
-            AREFLIB.Variables.Server_IP = Conn_Keys.Server_IP_Request(Password);
-            AREFLIB.Variables.Server_database = Conn_Keys.Server_database_Request(Password);
-
-            AREFLIB.Variables.Store_SQLusername = Conn_Keys.Store_SQLusername_Request(Password);
-            AREFLIB.Variables.Store_SQLpassword = Encryption.DecryptString(Conn_Keys.Store_SQLpassword_Request(Password));
-            AREFLIB.Variables.Store_SQLdatabase = Conn_Keys.Store_SQLdatabase_Request(Password);
-
-            AREFLIB.Variables.Store_Loginusername = Conn_Keys.Store_Loginusername_Request(Password);
-            AREFLIB.Variables.Store_Loginpassword = Encryption.DecryptString(Conn_Keys.Store_Loginpassword_Request(Password));
-
-            AREFLIB.Variables.HOST_Loginusername = Conn_Keys.HOST_Loginusername_Request(Password);
-            AREFLIB.Variables.HOST_Loginpassword = Encryption.DecryptString(Conn_Keys.HOST_Loginpassword_Request(Password));
-        }
-
         //Ping
         public static bool Ping(string IP, int Time_Out)
         {
@@ -79,7 +60,7 @@ namespace AREFLIB
             proc.Start();
         }
 
-        // Increase IP
+        //Increase IP
         public static string IP_Increment(string IP, int increment)
         {
             return IP.Split('.')[0] + "." + IP.Split('.')[1] + "." + IP.Split('.')[2] + "." + (int.Parse(IP.Split('.')[3]) + increment);

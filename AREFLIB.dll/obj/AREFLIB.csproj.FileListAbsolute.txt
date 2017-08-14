@@ -10,3 +10,11 @@ C:\Documents and Settings\Support\My Documents\Visual Studio 2005\Projects\AREFL
 C:\Documents and Settings\Support\My Documents\Visual Studio 2005\Projects\AREFLIB.dll\AREFLIB.dll\obj\Release\AREFLIB.GUI.Login.resources
 C:\Documents and Settings\Support\My Documents\Visual Studio 2005\Projects\AREFLIB.dll\AREFLIB.dll\obj\Release\AREFLIB.Properties.Resources.resources
 C:\Documents and Settings\Support\My Documents\Visual Studio 2005\Projects\AREFLIB.dll\AREFLIB.dll\obj\Release\AREFLIB.csproj.GenerateResource.Cache
+D:\Projects\AREFLIB\AREFLIB.dll\obj\Debug\ResolveAssemblyReference.cache
+D:\Projects\AREFLIB\AREFLIB.dll\obj\Debug\AREFLIB.GUI.Login.resources
+D:\Projects\AREFLIB\AREFLIB.dll\obj\Debug\AREFLIB.Properties.Resources.resources
+D:\Projects\AREFLIB\AREFLIB.dll\obj\Debug\AREFLIB.csproj.GenerateResource.Cache
+D:\Projects\AREFLIB\AREFLIB.dll\obj\Debug\AREFLIB.dll
+D:\Projects\AREFLIB\AREFLIB.dll\obj\Debug\AREFLIB.pdb
+D:\Projects\AREFLIB\AREFLIB.dll\bin\Debug\AREFLIB.dll
+D:\Projects\AREFLIB\AREFLIB.dll\bin\Debug\AREFLIB.pdb

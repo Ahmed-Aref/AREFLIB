@@ -8,138 +8,77 @@ namespace AREFLIB
 {
     public static class SQL
     {
-
-        //Read From main server
-        public static string[,] Read_From_Server(String Query)
+        //Perform Local SQL Query
+        public static DataTable SQLQueryLocal(string Query)
         {
-            DataTable dt = new DataTable();
-            string[,] Array = new String[0, 0];
+            DataTable DT;
 
-            int Rows = 0;
-            int Coulmn = 0;
-
-            //The Connection String to make a connection
-            string connectionString = "Server=" + AREFLIB.Variables.Server_IP + "; Database=" + AREFLIB.Variables.Server_database + "; User Id=" + AREFLIB.Variables.Server_username + "; Password=" + AREFLIB.Variables.Server_password + "; TrustServerCertificate=True";
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection("Server= localhost; Database= master;Integrated Security=SSPI;"))
             {
-                try
-                {
-                    SqlCommand command = new SqlCommand(Query, connection);
-                    connection.Open();
-
-                    dt.Load(command.ExecuteReader());
-                    connection.Close();
-
-                    Rows = dt.Rows.Count;
-                    Coulmn = dt.Columns.Count;
-
-                    Array = new String[Rows, Coulmn];
-
-                    for (int i = 0; i < Rows; i++)
-                    {
-                        for (int u = 0; u < Coulmn; u++)
-                        {
-                            Array[i, u] = dt.Rows[i][u].ToString();
-                        }
-                    }
-                }
-                catch { }
-
-                return Array;
+                SqlCommand command = new SqlCommand(Query, connection);
+                connection.Open();
+                DT = new DataTable();
+                DT.Load(command.ExecuteReader());
+                connection.Close();
             }
+            return DT;
         }
 
-        //Read to Array
-        public static string[,] SQLQuery_Arry(String Query, string IP)
-        {
-            DataTable dt = new DataTable();
-            string[,] Array = new String[0, 0];
-
-            int Rows = 0;
-            int Coulmn = 0;
-
-            //The Connection String to make a connection
-            string connectionString = "Server=" + IP + "; Database=" + AREFLIB.Variables.Store_SQLdatabase + "; User Id=" + AREFLIB.Variables.Store_SQLusername + "; Password=" + AREFLIB.Variables.Store_SQLpassword + "; TrustServerCertificate=True";
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                try
-                {
-                    SqlCommand command = new SqlCommand(Query, connection);
-                    connection.Open();
-
-                    dt.Load(command.ExecuteReader());
-                    connection.Close();
-
-                    Rows = dt.Rows.Count;
-                    Coulmn = dt.Columns.Count;
-
-                    Array = new String[Rows, Coulmn];
-
-                    for (int i = 0; i < Rows; i++)
-                    {
-                        for (int u = 0; u < Coulmn; u++)
-                            Array[i, u] = dt.Rows[i][u].ToString();
-                    }
-                }
-                catch { }
-
-                return Array;
-            }
-        }
-
-        //Read to DT
-        public static DataTable SQLQuery_DT(String Query, string IP)
+        //Perform SQL Query to Remote Server and Return DataTable
+        public static DataTable SQLRemoteQueryDT(string Query, string IP, string DB, string Username, string Password)
         {
             //The Connection String to make a connection
-            string connectionString = "Server=" + IP + ";Database=" + AREFLIB.Variables.Store_SQLdatabase + ";User Id=" + AREFLIB.Variables.Store_SQLusername + ";Password=" + AREFLIB.Variables.Store_SQLpassword + ";TrustServerCertificate=True";
-            DataTable dt = new DataTable();
+            string connectionString = "Server=" + IP + ";Database=" + DB + ";User Id=" + Username + ";Password=" + Password + ";TrustServerCertificate=True";
+            DataTable DT = new DataTable();
 
             // Send Query
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
+                SqlCommand command = new SqlCommand(Query, connection);
+                connection.Open();
+
+                DT.Load(command.ExecuteReader());
+                connection.Close();
+            }
+            return DT;
+        }
+
+        //Perform SQL Query to Remote Server and Return Array of Strings
+        public static string[,] SQLRemoteQueryArray(string Query, string IP, string DB, string Username, string Password)
+        {
+            DataTable DT = new DataTable();
+            string[,] Array = new String[0, 0];
+
+            int Rows = 0;
+            int Coulmn = 0;
+
+            //The Connection String to make a connection
+            string connectionString = "Server=" + IP + ";Database=" + DB + ";User Id=" + Username + ";Password=" + Password + ";TrustServerCertificate=True";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
                 try
                 {
                     SqlCommand command = new SqlCommand(Query, connection);
                     connection.Open();
 
-                    try
-                    {
-                        dt.Load(command.ExecuteReader());
-                        connection.Close();
-                    }
-                    catch { } // Unkown error 
+                    DT.Load(command.ExecuteReader());
+                    connection.Close();
+
+                    Rows = DT.Rows.Count;
+                    Coulmn = DT.Columns.Count;
+
+                    Array = new String[Rows, Coulmn];
+
+                    for (int i = 0; i < Rows; i++)
+                        for (int u = 0; u < Coulmn; u++)
+                            Array[i, u] = DT.Rows[i][u].ToString();
                 }
-                catch { } // Means wrong Username and Passsword
+                catch { }
+
+                return Array;
             }
-            return dt;
         }
 
-        //Read Stores
-        public static void Read_Stores(bool ksa_only)
-        {
-            string Query = "";
-            if (ksa_only == true)
-            {
-                // Read All Stores
-                Query = @"SELECT STR.Store_Number,STR.Store_Name,STR.Store_IP,STR.Region_ID,
-                             STR.Store_Lat,STR.Store_Long,STR.Meraki_Serial 
-                             FROM Store as STR
-                             WHERE Region_ID in (1,2,3,4,5,10) and STR.Store_Active = 1 ORDER BY Store_Number";
-            }
-            else
-            {
-                Query = @"SELECT STR.Store_Number,STR.Store_Name,STR.Store_IP,STR.Region_ID,
-                                 STR.Store_Lat,STR.Store_Long,STR.Meraki_Serial 
-                                 FROM Store as STR
-                                 WHERE ISNUMERIC(STR.Store_Number) <> 0 and  STR.Store_Active = 1 ORDER BY Store_Number";
-            }
-
-            AREFLIB.Variables.Store_Array = AREFLIB.SQL.Read_From_Server(Query);
-
-            Query = @"SELECT Region_ID,Region_Name FROM Region";
-            AREFLIB.Variables.Region_Array = AREFLIB.SQL.Read_From_Server(Query);
-        }
     }
 }

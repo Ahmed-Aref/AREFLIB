@@ -9,7 +9,7 @@ namespace AREFLIB
 {
     public static class General
     {
-        // join two Arrays
+        //Join two Arrays
         public static string[,] Join_Array(string[,] Array1, string[,] Array2)
         {
             string[,] Big_Array = new string[(Array1.GetLength(0) + Array2.GetLength(0)), Array1.GetLength(1)];
@@ -96,6 +96,23 @@ namespace AREFLIB
         public static void Close_GUI_APP()
         {
             System.Windows.Forms.Application.Exit();
+        }
+
+        //Register a DLL
+        public static void DLLRegister(string DLLPath,bool UnRegist)
+        {
+            ProcessStartInfo Proc = new ProcessStartInfo();
+            Process pStart = new Process();
+            Proc.UseShellExecute = true;
+
+            string Command = @" Regsvr32 -s " + "\"" + DLLPath + "\"";
+
+            if(UnRegist)
+                Command = @" Regsvr32 -u -s " + "\"" + DLLPath + "\"";
+
+            Proc.Arguments = "/c " + Command;
+            pStart = Process.Start(Proc);
+            pStart.WaitForExit();
         }
     }
 }
