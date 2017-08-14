@@ -1,0 +1,5 @@
+C:\Documents and Settings\Support\My Documents\Visual Studio 2005\Projects\AREFLIB.dll\AREFLIB.dll\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Support\My Documents\Visual Studio 2005\Projects\AREFLIB.dll\AREFLIB.dll\bin\Debug\AREFLIB.dll.dll
+C:\Documents and Settings\Support\My Documents\Visual Studio 2005\Projects\AREFLIB.dll\AREFLIB.dll\bin\Debug\AREFLIB.dll.pdb
+C:\Documents and Settings\Support\My Documents\Visual Studio 2005\Projects\AREFLIB.dll\AREFLIB.dll\obj\Debug\AREFLIB.dll.dll
+C:\Documents and Settings\Support\My Documents\Visual Studio 2005\Projects\AREFLIB.dll\AREFLIB.dll\obj\Debug\AREFLIB.dll.pdb

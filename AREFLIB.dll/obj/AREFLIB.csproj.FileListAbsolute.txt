@@ -1,0 +1,12 @@
+C:\Documents and Settings\Support\My Documents\Visual Studio 2005\Projects\AREFLIB.dll\AREFLIB.dll\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Support\My Documents\Visual Studio 2005\Projects\AREFLIB.dll\AREFLIB.dll\bin\Debug\AREFLIB.dll
+C:\Documents and Settings\Support\My Documents\Visual Studio 2005\Projects\AREFLIB.dll\AREFLIB.dll\bin\Debug\AREFLIB.pdb
+C:\Documents and Settings\Support\My Documents\Visual Studio 2005\Projects\AREFLIB.dll\AREFLIB.dll\obj\Debug\AREFLIB.dll
+C:\Documents and Settings\Support\My Documents\Visual Studio 2005\Projects\AREFLIB.dll\AREFLIB.dll\obj\Debug\AREFLIB.pdb
+C:\Documents and Settings\Support\My Documents\Visual Studio 2005\Projects\AREFLIB.dll\AREFLIB.dll\obj\Release\ResolveAssemblyReference.cache
+C:\Documents and Settings\Support\My Documents\Visual Studio 2005\Projects\AREFLIB.dll\AREFLIB.dll\obj\Debug\AREFLIB.GUI.Login.resources
+C:\Documents and Settings\Support\My Documents\Visual Studio 2005\Projects\AREFLIB.dll\AREFLIB.dll\obj\Debug\AREFLIB.Properties.Resources.resources
+C:\Documents and Settings\Support\My Documents\Visual Studio 2005\Projects\AREFLIB.dll\AREFLIB.dll\obj\Debug\AREFLIB.csproj.GenerateResource.Cache
+C:\Documents and Settings\Support\My Documents\Visual Studio 2005\Projects\AREFLIB.dll\AREFLIB.dll\obj\Release\AREFLIB.GUI.Login.resources
+C:\Documents and Settings\Support\My Documents\Visual Studio 2005\Projects\AREFLIB.dll\AREFLIB.dll\obj\Release\AREFLIB.Properties.Resources.resources
+C:\Documents and Settings\Support\My Documents\Visual Studio 2005\Projects\AREFLIB.dll\AREFLIB.dll\obj\Release\AREFLIB.csproj.GenerateResource.Cache
