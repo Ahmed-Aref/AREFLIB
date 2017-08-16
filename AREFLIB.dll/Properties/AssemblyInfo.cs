@@ -9,8 +9,8 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("DotNet_2.0")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Ahmed Aref")]
-[assembly: AssemblyProduct("Aref_Library v1.0.1")]
-[assembly: AssemblyCopyright("Ahmed Aref @2016")]
+[assembly: AssemblyProduct("AREFLIB v1.0.2")]
+[assembly: AssemblyCopyright("Ahmed Aref @2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -31,5 +31,5 @@ using System.Runtime.InteropServices;
 //
 // You can specify all the values or you can default the Revision and Build Numbers 
 // by using the '*' as shown below:
-[assembly: AssemblyVersion("1.16.12.04")]
-[assembly: AssemblyFileVersion("1.16.12.04")]
+[assembly: AssemblyVersion("1.0.2.0")]
+[assembly: AssemblyFileVersion("1.0.2.0")]

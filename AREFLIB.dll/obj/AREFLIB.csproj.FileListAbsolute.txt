@@ -18,3 +18,7 @@ D:\Projects\AREFLIB\AREFLIB.dll\obj\Debug\AREFLIB.dll
 D:\Projects\AREFLIB\AREFLIB.dll\obj\Debug\AREFLIB.pdb
 D:\Projects\AREFLIB\AREFLIB.dll\bin\Debug\AREFLIB.dll
 D:\Projects\AREFLIB\AREFLIB.dll\bin\Debug\AREFLIB.pdb
+D:\Projects\AREFLIB\AREFLIB.dll\obj\Release\ResolveAssemblyReference.cache
+D:\Projects\AREFLIB\AREFLIB.dll\obj\Release\AREFLIB.GUI.Login.resources
+D:\Projects\AREFLIB\AREFLIB.dll\obj\Release\AREFLIB.Properties.Resources.resources
+D:\Projects\AREFLIB\AREFLIB.dll\obj\Release\AREFLIB.csproj.GenerateResource.Cache

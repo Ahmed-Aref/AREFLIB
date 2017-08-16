@@ -80,5 +80,29 @@ namespace AREFLIB
             }
         }
 
+        //Insert Huge amoun of rows to Databse
+        public static string SQLBulkInsert(DataTable DT, string Database, string TableName, string IP, string UserName, string Password, int TimeOut)
+        {
+            string MSG = "OK";
+
+            string Connection_String = "Server=" + IP + "; Database=" + Database + "; User Id=" + UserName + "; Password=" + Password + "; TrustServerCertificate=True";
+            SqlConnection SQL_Connection = new SqlConnection(Connection_String);
+
+            try
+            {
+                SQL_Connection.Open();
+                SqlBulkCopy bulkCopy = new SqlBulkCopy(SQL_Connection, SqlBulkCopyOptions.TableLock | SqlBulkCopyOptions.FireTriggers | SqlBulkCopyOptions.UseInternalTransaction, null);
+                bulkCopy.BulkCopyTimeout = TimeOut;
+                bulkCopy.DestinationTableName = TableName;
+                bulkCopy.WriteToServer(DT);
+                SQL_Connection.Close();
+            }
+            catch (Exception EX)
+            {
+                MSG = EX.Message;
+                SQL_Connection.Close();
+            }
+            return MSG;
+        }
     }
 }

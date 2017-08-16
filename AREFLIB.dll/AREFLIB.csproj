@@ -38,6 +38,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Functions\Connectivity.cs" />
+    <Compile Include="Functions\Conversion.cs" />
     <Compile Include="Functions\Encryption.cs" />
     <Compile Include="Functions\General.cs" />
     <Compile Include="Functions\WindowsServices.cs" />
@@ -54,7 +55,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Functions\RemoteInformation.cs" />
-    <Compile Include="Functions\SQL.cs" />
+    <Compile Include="Functions\SQLServer.cs" />
     <Compile Include="Functions\UNCAccessWithCredentials.cs" />
   </ItemGroup>
   <ItemGroup>

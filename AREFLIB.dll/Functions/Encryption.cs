@@ -9,13 +9,12 @@ namespace AREFLIB
     public static class Encryption
     {
         private const string initVector = "aref1ahmed2king3";
+        public static string passPhrase = "donttryathome";
         private const int keysize = 256;
 
         //Encrypt
         public static string EncryptString(string plainText)
         {
-            string passPhrase = "donttryathome";
-
             byte[] initVectorBytes = Encoding.UTF8.GetBytes(initVector);
             byte[] plainTextBytes = Encoding.UTF8.GetBytes(plainText);
             PasswordDeriveBytes password = new PasswordDeriveBytes(passPhrase, null);
@@ -36,8 +35,6 @@ namespace AREFLIB
         //Decrypt
         public static string DecryptString(string cipherText)
         {
-            string passPhrase = "donttryathome";
-
             byte[] initVectorBytes = Encoding.ASCII.GetBytes(initVector);
             byte[] cipherTextBytes = Convert.FromBase64String(cipherText);
             PasswordDeriveBytes password = new PasswordDeriveBytes(passPhrase, null);
